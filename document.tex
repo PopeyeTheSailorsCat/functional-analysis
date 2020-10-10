@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath}
+\usepackage{tikz,amstext}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{lscape}
+\usepackage{indentfirst}
+\newlength{\tempheight}
+\graphicspath{{/.graph/}}
+
+\newcommand{\Let}[0]{%
+	\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+				\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}}
+
+
+\begin{document}
+
+
+	\section{Глава}
+		\paragraph{\S 1 Операции над множествами}\par
+		
+			\hfill\par
+			 $\Let A, B;$ $A\in X$; $x,y\in A$;$\{A_\alpha\}_{\alpha\in\Lambda}$
+			\begin{equation*}
+				\begin{aligned}
+					\bigcup_{\alpha\in\Lambda} A_\alpha &= \{x\in X \bigm| \exists \alpha_0\in\Lambda : x\in A_{\alpha_0 } \}\\
+					\bigcap_{\alpha \in \Lambda} A_\alpha &= \{x\in X \bigm | x \in A_\alpha; \forall \alpha \in \Lambda \}\\
+					A\setminus B &= \{x \in X \bigm | x\in A; X \notin B\}\\
+					A^\mathrm{C}=cA&=\{X\notin A = x \in X \bigm | x \notin A\}
+				\end{aligned}
+			\end{equation*}
+			
+		
+
+	
+		
+			 
+			 
+			 \textbf{Утв. 1} {\it 
+			 	\begin{equation*}
+			 		\begin{aligned}
+			 			c\left(\bigcup_{\alpha\in\Lambda} A_\alpha\right) = \bigcap_{\alpha \in \Lambda} \left(cA_\alpha\right)
+			 		\end{aligned}
+			 	\end{equation*}\par.
+			 }
+			 \\
+			 \textbf{Доказательство.}
+			 \begin{equation*}
+			 \begin{aligned}
+				\Let  x \in c\left( \bigcup_{\alpha\in\Lambda} A_\alpha\right) \Leftrightarrow x\notin \bigcup_{\alpha\in\Lambda} A_\alpha \Leftrightarrow \nexists \alpha_0 \in \Lambda : x\in A_{\alpha_0}
+				\Leftrightarrow x\notin A_\alpha,\forall \alpha \in \Lambda
+				\Leftrightarrow x \in cA_\alpha,\forall\alpha\in\Lambda
+				\Leftrightarrow x\in\bigcap_{\alpha \in \Lambda} \left(cA_\alpha\right)
+				\Box
+			 \end{aligned}
+			 \end{equation*}\par
+
+			  \textbf{Утв. 2} {\it 
+			  	\begin{equation*}
+			  		\begin{aligned}
+			  			c\left(\bigcap_{\alpha\in\Lambda} A_\alpha\right) = \bigcup_{\alpha \in \Lambda} \left(cA_\alpha\right)
+			  		\end{aligned}
+			  	\end{equation*}\par.}
+			 \\
+			 \textbf{Доказательство.}
+			 \begin{equation*}
+			 	\begin{aligned}
+			 		&\Let x \in c\left(\bigcap_{\alpha\in\Lambda} A_\alpha\right) \Leftrightarrow
+			 		x \notin \bigcap_{\alpha\in\Lambda} A_\alpha \Leftrightarrow
+			 		\exists \alpha_0 \in\Lambda : x \in A_{\alpha_0} \Leftrightarrow
+			 		x \in cA_{\alpha_0} \Leftrightarrow
+			 		x \in \bigcup_{\alpha \in \Lambda} \left(cA_\alpha\right)
+			 		\\
+			 		&\text{. Поскольку }
+			 		\exists cA_{\alpha_0} : x\in  cA_{\alpha_0}
+					\Box
+				 \end{aligned}			 
+			 \end{equation*}\par
+			
+			 
+	
+\end{document}
