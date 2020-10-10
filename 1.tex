@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry} % настройки полей документа
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath}
+\usepackage{tikz,amstext}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{lscape}
+\usepackage{indentfirst}
+
+\newlength{\tempheight}
+\graphicspath{{/.graph/}}
+
+\newcommand{\Let}[0]{%
+	\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+				\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}}
+
+
+\begin{document}
+	\titlepage
+	\large{}
+	
+	\title{Функциональный анализ}
+	\author{Мамаева Анастасия, Веденичев Дмитрий}
+	\date{Осень - Зима 2020}
+	
+	\maketitle
+	
+	\section{Счетные множества}
+	
+	\noindent Условимся обозначать множества большими буквами латинского алфавита. Пусть есть некоторое множество  X такое, что оно содержит любое другое $  A  \subset  X$. Элементы этих множеств будем обозначать маленькими буквами $ x, y \in A$.
+	\hfill \break
+	
+	\noindentКроме того, введём понятие семейства множеств
+	\noindent$\{ A_\alpha\}_\alpha \in\Lambda$, где $\Lambda$ - множество индексов, $\alpha$ - индекс.
+	
+	\hfill \break
+	\noindent{\it Объединением множеств} называется
+	$\bigcup \limits_{\alpha \in \Lambda} A_\alpha = \{x \in X \vert \: \exists \: \alpha_o \in \Lambda \: \colon \: x \in A_{\alpha_o} \:$$\}$
+	
+	\hfill \break
+	\noindent{\it Пересечение множеств} $\bigcap\limits_{\alpha \in \Lambda}A_\alpha = \{x \in X \vert \:x \in A_\alpha, \forall \alpha \in \Lambda \}$
+	
+	\hfill \break
+	\noindent{\it Разность двух множеств } $A \setminus B = \{x \in X \vert \:x \in A, \: x \notin A \} $
+	
+	\hfill \break
+	\noindent{\it Дополнение } $cA = X \setminus A = \{x \in X \vert \: x \notin A \}$
+	
+	\hfill \break
+	\noindentУтверждения $\:\:1^0 \: c(\bigcup\limits_{\alpha \in \Lambda}A_\alpha) = \bigcap\limits_{\alpha \in \Lambda}(cA_\alpha)$
+	$\:\:\:\:\:\:\:\:2^0 \: c(\bigcap\limits_{\alpha \in \Lambda}A_\alpha) = \bigcup\limits_{\alpha \in \Lambda}(cA_\alpha)$
+	
+	\hfill \break
+	\textbf{Доказательство 1.}
+	\hfill \break
+	\begin{equation*}
+		\begin{aligned}
+			&\Let  x \in c\left( \bigcup_{\alpha\in\Lambda} A_\alpha\right) \Leftrightarrow x\notin \bigcup_{\alpha\in\Lambda} A_\alpha \Leftrightarrow \nexists \alpha_0 \in \Lambda : x\in A_{\alpha_0}
+			\Leftrightarrow x\notin A_\alpha,\forall \alpha \in \Lambda \Leftrightarrow\\
+			&\Leftrightarrow x \in cA_\alpha,\forall\alpha\in\Lambda
+			\Leftrightarrow x\in\bigcap_{\alpha \in \Lambda} \left(cA_\alpha\right)
+			\Box
+		\end{aligned}
+	\end{equation*}\par
+	
+	\hfill \break
+	\textbf{Доказательство 2.}
+	\hfill \break
+	\begin{equation*}
+		\begin{aligned}
+			&\Let x \in c\left(\bigcap_{\alpha\in\Lambda} A_\alpha\right) \Leftrightarrow
+			x \notin \bigcap_{\alpha\in\Lambda} A_\alpha \Leftrightarrow
+			\exists \alpha_0 \in\Lambda : x \in A_{\alpha_0} \Leftrightarrow
+			x \in cA_{\alpha_0} \Leftrightarrow
+			x \in \bigcup_{\alpha \in \Lambda} \left(cA_\alpha\right)
+			\\
+			&\text{Поскольку }
+			\exists cA_{\alpha_0} : x\in  cA_{\alpha_0}
+			\Box
+		\end{aligned}			 
+	\end{equation*}\par
+	
+	
+\end{document}
